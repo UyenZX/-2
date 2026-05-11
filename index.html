@@ -2,7 +2,11 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta property="og:title" content="Tokyo Guide Flipbook" />
+    <meta property="og:description" content="Tokyo travel experience." />
+    <meta property="og:image" content="img/review.jpg" />
     <title>東京案内書 - Tokyo Guide Flipbook</title>
+    <link rel="icon" type="image/png" href="img/tokyo-tower.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     
@@ -26,10 +30,13 @@
     </div>
 
     <nav class="controls">
-        <button id="prev-btn">前へ (Trước)</button>
-        <span id="page-number">1 / 20</span>
-        <button id="next-btn">次へ (Sau)</button>
+        <button id="prev-btn">前へ</button>
+        <span id="page-number">1 / 12</span>
+        <button id="next-btn">次へ</button>
     </nav>
+    <div style="position: fixed; bottom: 20px; right: 20px; text-align: center; background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 999;">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://uyenzx.github.io/-2" alt="QR Code">
+</div>
 
     <script type="text/javascript" src="js/main.js"></script>
 </body>
