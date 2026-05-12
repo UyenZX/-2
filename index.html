@@ -23,11 +23,10 @@
     <script type="text/javascript" src="js/hash.js"></script>
 </head>
 <body>
-
     <header>
-        <h1>東京案内書</h1>
-        <p>TOKYO TRAVEL GUIDE</p>
-    </header>
+    <h1>東京案内書</h1>
+    <p class="tagline">— TOKYO TRAVEL GUIDE —</p>
+</header>
 
     <div id="main-container">
         <div id="flipbook-viewport">
@@ -42,6 +41,20 @@
         <span id="page-number">1 / 12</span>
         <button id="next-btn">次へ</button>
     </nav>
+    <div class="location-nav">
+    <div class="nav-card">
+        <h3>新宿</h3>
+        <a href="shinjuku.html" class="visit-btn">もっと見る</a>
+    </div>
+    <div class="nav-card">
+        <h3>池袋</h3>
+        <a href="#" class="visit-btn">もっと見る</a>
+    </div>
+    <div class="nav-card">
+        <h3>渋谷</h3>
+        <a href="#" class="visit-btn">もっと見る</a>
+    </div>
+</div>
     <div style="position: fixed; bottom: 20px; right: 20px; text-align: center; background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 999;">
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://uyenzx.github.io/-2" alt="QR Code">
 </div>

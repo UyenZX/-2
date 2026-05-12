@@ -38,6 +38,7 @@ function loadApp() {
         elevation: 100,
         gradients: true,
         autoCenter: true,
+        acceleration: true,
         display: (windowWidth < 700) ? 'single' : 'double',
         when: {
             turned: function(e, page) {
