@@ -114,7 +114,6 @@ header h1 {
 #flipbook-viewport {
     position: relative;
 
-    width: 100%;
     max-width: 1200px;
 
     overflow-x: hidden;
