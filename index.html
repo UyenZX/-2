@@ -1,295 +1,323 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta property="og:title" content="Tokyo Guide Flipbook" />
     <meta property="og:description" content="Tokyo travel experience." />
     <meta property="og:image" content="img/review.jpg" />
     <title>東京案内書 - Tokyo Guide Flipbook</title>
-    <meta name="description" content="Interactive Tokyo travel flipbook with guides to Shibuya, Shinjuku, Ikebukuro, food, anime culture, and local attractions."/>
+    <meta name="description"
+        content="Interactive Tokyo travel flipbook with guides to Shibuya, Shinjuku, Ikebukuro, food, anime culture, and local attractions." />
     <link rel="icon" type="image/png" href="img/tokyo-tower.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
-    
+
     <meta property="og:url" content="https://uyenzx.github.io/-2" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Tokyo Guide Flipbook" />
-    <meta name="twitter:description" content="Tokyo travel experience. Interactive Tokyo travel flipbook with guides to Shibuya, Shinjuku, Ikebukuro, food, anime culture, and local attractions." />
+    <meta name="twitter:description"
+        content="Tokyo travel experience. Interactive Tokyo travel flipbook with guides to Shibuya, Shinjuku, Ikebukuro, food, anime culture, and local attractions." />
     <meta name="twitter:image" content="https://uyenzx.github.io/-2/img/review.jpg" />
 
     <script type="text/javascript" src="js/jquery.min.1.7.js"></script>
     <script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
     <script type="text/javascript" src="js/hash.js"></script>
 </head>
+
 <body>
     <div id="password-screen">
 
-    <div class="password-box">
-        <h1>東京案内書</h1>
-        <p>Preview Access</p>
+        <div class="password-box">
+            <h1>東京案内書</h1>
+            <p>Preview Access</p>
 
-        <input type="password" id="password-input" placeholder="Password">
+            <input type="password" id="password-input" placeholder="Password">
 
-        <button onclick="checkPassword()">ENTER</button>
+            <button onclick="checkPassword()">ENTER</button>
 
-        <p id="error-text"></p>
+            <p id="error-text"></p>
+        </div>
+
     </div>
+    <div id="protected-content" style="display:none;">
+        <header>
+            <h1>東京案内書</h1>
+            <p class="tagline">— TOKYO TRAVEL GUIDE —</p>
+        </header>
 
-</div>
-<div id="protected-content" style="display:none;">
-    <header>
-    <h1>東京案内書</h1>
-    <p class="tagline">— TOKYO TRAVEL GUIDE —</p>
-</header>
-
-    <div id="main-container">
-        <div id="flipbook-viewport">
-            <div id="flipbook">
+        <div id="main-container">
+            <div id="flipbook-viewport">
+                <div id="flipbook">
                 </div>
-            <div class="shadow-floor"></div>
+                <div class="shadow-floor"></div>
+            </div>
+        </div>
+
+        <nav class="controls">
+            <button id="prev-btn">前へ</button>
+            <span id="page-number">1 / 12</span>
+            <button id="next-btn">次へ</button>
+        </nav>
+
+        <div class="tokyo-sections">
+            <div class="section-label-row">
+                <span class="section-label">エリアを選ぶ</span>
+                <div class="divider-line"></div>
+            </div>
+            <section class="district">
+                <div class="district-header">
+                    <span class="district-number" style="color: #c0392b;">01</span>
+                    <div>
+                        <h2 class="district-name">新宿</h2>
+                        <p class="district-name-en" style="color: #c0392baa;">Shinjuku</p>
+                    </div>
+                    <div class="district-line" style="background: #c0392b33;"></div>
+                </div>
+                <div class="scroll-track">
+                    <div class="spot-card">
+                        <img src="img/fire-museum.jpg" alt="消防博物館" />
+                        <div class="card-overlay"></div>
+                        <span class="card-tag"
+                            style="color:#c0392b;border-color:#c0392b66;background:#c0392b22;">無料</span>
+                        <div class="card-content">
+                            <p class="card-sub">Fire Museum</p>
+                            <h3 class="card-name">消防博物館</h3>
+                            <p class="card-desc">江戸から現代まで消防の歴史を体感</p>
+                        </div>
+                        <div class="card-accent" style="background:#c0392b;"></div>
+                    </div>
+                    <div class="spot-card">
+                        <img src="img/metro.jpg" alt="東京都庁展望室" />
+                        <div class="card-overlay"></div>
+                        <span class="card-tag"
+                            style="color:#c0392b;border-color:#c0392b66;background:#c0392b22;">無料</span>
+                        <div class="card-content">
+                            <p class="card-sub">Tokyo Metropolitan Gov.</p>
+                            <h3 class="card-name">東京都庁展望室</h3>
+                            <p class="card-desc">地上202m、東京を一望するパノラマ</p>
+                        </div>
+                        <div class="card-accent" style="background:#c0392b;"></div>
+                    </div>
+                    <div class="spot-card">
+                        <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=600&q=80"
+                            alt="平和祈念展示資料館" />
+                        <div class="card-overlay"></div>
+                        <span class="card-tag"
+                            style="color:#c0392b;border-color:#c0392b66;background:#c0392b22;">無料</span>
+                        <div class="card-content">
+                            <p class="card-sub">Peace Memorial Museum</p>
+                            <h3 class="card-name">平和祈念展示資料館</h3>
+                            <p class="card-desc">戦争と平和の歴史を伝える静かな場所</p>
+                        </div>
+                        <div class="card-accent" style="background:#c0392b;"></div>
+                    </div>
+                    <div class="spot-card">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="思い出横丁" />
+                        <div class="card-overlay"></div>
+                        <span class="card-tag"
+                            style="color:#c0392b;border-color:#c0392b66;background:#c0392b22;">グルメ</span>
+                        <div class="card-content">
+                            <p class="card-sub">Memory Lane</p>
+                            <h3 class="card-name">思い出横丁</h3>
+                            <p class="card-desc">昭和の雰囲気が漂う屋台横丁</p>
+                        </div>
+                        <div class="card-accent" style="background:#c0392b;"></div>
+                    </div>
+                    <div class="spot-card">
+                        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80"
+                            alt="TOKYO Night & Light" />
+                        <div class="card-overlay"></div>
+                        <span class="card-tag"
+                            style="color:#c0392b;border-color:#c0392b66;background:#c0392b22;">夜景</span>
+                        <div class="card-content">
+                            <p class="card-sub">Night Illumination</p>
+                            <h3 class="card-name">TOKYO Night & Light</h3>
+                            <p class="card-desc">夜の東京を彩る幻想的な光のショー</p>
+                        </div>
+                        <div class="card-accent" style="background:#c0392b;"></div>
+                    </div>
+                    <div class="spot-card">
+                        <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&q=80"
+                            alt="一蘭新宿中央東口店" />
+                        <div class="card-overlay"></div>
+                        <span class="card-tag"
+                            style="color:#c0392b;border-color:#c0392b66;background:#c0392b22;">ラーメン</span>
+                        <div class="card-content">
+                            <p class="card-sub">Ichiran Ramen</p>
+                            <h3 class="card-name">一蘭新宿中央東口店</h3>
+                            <p class="card-desc">一人で味わう至極の博多とんこつラーメン</p>
+                        </div>
+                        <div class="card-accent" style="background:#c0392b;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 池袋 -->
+            <section class="district">
+                <div class="district-header">
+                    <span class="district-number" style="color: #2980b9;">02</span>
+                    <div>
+                        <h2 class="district-name">池袋</h2>
+                        <p class="district-name-en" style="color: #2980b9aa;">Ikebukuro</p>
+                    </div>
+                    <div class="district-line" style="background: #2980b933;"></div>
+                </div>
+                <div class="scroll-track">
+                    <div class="spot-card">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80"
+                            alt="魚吉酒場池袋店" />
+                        <div class="card-overlay"></div>
+                        <span class="card-tag"
+                            style="color:#2980b9;border-color:#2980b966;background:#2980b922;">居酒屋</span>
+                        <div class="card-content">
+                            <p class="card-sub">Uokichi Sakaba</p>
+                            <h3 class="card-name">魚吉酒場池袋店</h3>
+                            <p class="card-desc">新鮮な海の幸と日本酒が楽しめる居酒屋</p>
+                        </div>
+                        <div class="card-accent" style="background:#2980b9;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 渋谷 -->
+            <section class="district">
+                <div class="district-header">
+                    <span class="district-number" style="color: #8e44ad;">03</span>
+                    <div>
+                        <h2 class="district-name">渋谷</h2>
+                        <p class="district-name-en" style="color: #8e44adaa;">Shibuya</p>
+                    </div>
+                    <div class="district-line" style="background: #8e44ad33;"></div>
+                </div>
+                <div class="scroll-track">
+                    <div class="spot-card">
+                        <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=600&q=80"
+                            alt="忠犬ハチ公像" />
+                        <div class="card-overlay"></div>
+                        <span class="card-tag"
+                            style="color:#8e44ad;border-color:#8e44ad66;background:#8e44ad22;">観光</span>
+                        <div class="card-content">
+                            <p class="card-sub">Hachiko Statue</p>
+                            <h3 class="card-name">忠犬ハチ公像</h3>
+                            <p class="card-desc">渋谷のシンボル、忠犬ハチ公の待ち合わせ場所</p>
+                        </div>
+                        <div class="card-accent" style="background:#8e44ad;"></div>
+                    </div>
+                    <div class="spot-card">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+                            alt="渋谷 PARCO" />
+                        <div class="card-overlay"></div>
+                        <span class="card-tag"
+                            style="color:#8e44ad;border-color:#8e44ad66;background:#8e44ad22;">ショッピング</span>
+                        <div class="card-content">
+                            <p class="card-sub">Shibuya PARCO</p>
+                            <h3 class="card-name">渋谷 PARCO</h3>
+                            <p class="card-desc">アートとカルチャーが融合する複合施設</p>
+                        </div>
+                        <div class="card-accent" style="background:#8e44ad;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 上野 -->
+            <section class="district">
+                <div class="district-header">
+                    <span class="district-number" style="color: #27ae60;">04</span>
+                    <div>
+                        <h2 class="district-name">上野</h2>
+                        <p class="district-name-en" style="color: #27ae60aa;">Ueno</p>
+                    </div>
+                    <div class="district-line" style="background: #27ae6033;"></div>
+                </div>
+                <div class="scroll-track">
+                    <div class="spot-card">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80"
+                            alt="鳥焼肉鳥ひびきちゃん" />
+                        <div class="card-overlay"></div>
+                        <span class="card-tag"
+                            style="color:#27ae60;border-color:#27ae6066;background:#27ae6022;">焼肉</span>
+                        <div class="card-content">
+                            <p class="card-sub">Tori Hibiki-chan</p>
+                            <h3 class="card-name">鳥焼肉鳥ひびきちゃん</h3>
+                            <p class="card-desc">こだわりの鶏料理と焼肉が楽しめる人気店</p>
+                        </div>
+                        <div class="card-accent" style="background:#27ae60;"></div>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </div>
-
-    <nav class="controls">
-        <button id="prev-btn">前へ</button>
-        <span id="page-number">1 / 12</span>
-        <button id="next-btn">次へ</button>
-    </nav>
-    
-    <div class="tokyo-sections">
-<div class="section-label-row">
-      <span class="section-label">エリアを選ぶ</span>
-      <div class="divider-line"></div>
+    <div
+        style="position: fixed; bottom: 20px; right: 20px; text-align: center; background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 999;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://uyenzx.github.io/-2"
+            alt="QR Code">
     </div>
-    <section class="district">
-      <div class="district-header">
-        <span class="district-number" style="color: #c0392b;">01</span>
-        <div>
-          <h2 class="district-name">新宿</h2>
-          <p class="district-name-en" style="color: #c0392baa;">Shinjuku</p>
-        </div>
-        <div class="district-line" style="background: #c0392b33;"></div>
-      </div>
-      <div class="scroll-track">
-        <div class="spot-card">
-          <img src="img/fire-museum.jpg" alt="消防博物館" />
-          <div class="card-overlay"></div>
-          <span class="card-tag" style="color:#c0392b;border-color:#c0392b66;background:#c0392b22;">無料</span>
-          <div class="card-content">
-            <p class="card-sub">Fire Museum</p>
-            <h3 class="card-name">消防博物館</h3>
-            <p class="card-desc">江戸から現代まで消防の歴史を体感</p>
-          </div>
-          <div class="card-accent" style="background:#c0392b;"></div>
-        </div>
-        <div class="spot-card">
-          <img src="img/metro.jpg" alt="東京都庁展望室" />
-          <div class="card-overlay"></div>
-          <span class="card-tag" style="color:#c0392b;border-color:#c0392b66;background:#c0392b22;">無料</span>
-          <div class="card-content">
-            <p class="card-sub">Tokyo Metropolitan Gov.</p>
-            <h3 class="card-name">東京都庁展望室</h3>
-            <p class="card-desc">地上202m、東京を一望するパノラマ</p>
-          </div>
-          <div class="card-accent" style="background:#c0392b;"></div>
-        </div>
-        <div class="spot-card">
-          <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=600&q=80" alt="平和祈念展示資料館" />
-          <div class="card-overlay"></div>
-          <span class="card-tag" style="color:#c0392b;border-color:#c0392b66;background:#c0392b22;">無料</span>
-          <div class="card-content">
-            <p class="card-sub">Peace Memorial Museum</p>
-            <h3 class="card-name">平和祈念展示資料館</h3>
-            <p class="card-desc">戦争と平和の歴史を伝える静かな場所</p>
-          </div>
-          <div class="card-accent" style="background:#c0392b;"></div>
-        </div>
-        <div class="spot-card">
-          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="思い出横丁" />
-          <div class="card-overlay"></div>
-          <span class="card-tag" style="color:#c0392b;border-color:#c0392b66;background:#c0392b22;">グルメ</span>
-          <div class="card-content">
-            <p class="card-sub">Memory Lane</p>
-            <h3 class="card-name">思い出横丁</h3>
-            <p class="card-desc">昭和の雰囲気が漂う屋台横丁</p>
-          </div>
-          <div class="card-accent" style="background:#c0392b;"></div>
-        </div>
-        <div class="spot-card">
-          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" alt="TOKYO Night & Light" />
-          <div class="card-overlay"></div>
-          <span class="card-tag" style="color:#c0392b;border-color:#c0392b66;background:#c0392b22;">夜景</span>
-          <div class="card-content">
-            <p class="card-sub">Night Illumination</p>
-            <h3 class="card-name">TOKYO Night & Light</h3>
-            <p class="card-desc">夜の東京を彩る幻想的な光のショー</p>
-          </div>
-          <div class="card-accent" style="background:#c0392b;"></div>
-        </div>
-        <div class="spot-card">
-          <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&q=80" alt="一蘭新宿中央東口店" />
-          <div class="card-overlay"></div>
-          <span class="card-tag" style="color:#c0392b;border-color:#c0392b66;background:#c0392b22;">ラーメン</span>
-          <div class="card-content">
-            <p class="card-sub">Ichiran Ramen</p>
-            <h3 class="card-name">一蘭新宿中央東口店</h3>
-            <p class="card-desc">一人で味わう至極の博多とんこつラーメン</p>
-          </div>
-          <div class="card-accent" style="background:#c0392b;"></div>
-        </div>
-      </div>
-    </section>
+    <script>
 
-    <!-- 池袋 -->
-    <section class="district">
-      <div class="district-header">
-        <span class="district-number" style="color: #2980b9;">02</span>
-        <div>
-          <h2 class="district-name">池袋</h2>
-          <p class="district-name-en" style="color: #2980b9aa;">Ikebukuro</p>
-        </div>
-        <div class="district-line" style="background: #2980b933;"></div>
-      </div>
-      <div class="scroll-track">
-        <div class="spot-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="魚吉酒場池袋店" />
-          <div class="card-overlay"></div>
-          <span class="card-tag" style="color:#2980b9;border-color:#2980b966;background:#2980b922;">居酒屋</span>
-          <div class="card-content">
-            <p class="card-sub">Uokichi Sakaba</p>
-            <h3 class="card-name">魚吉酒場池袋店</h3>
-            <p class="card-desc">新鮮な海の幸と日本酒が楽しめる居酒屋</p>
-          </div>
-          <div class="card-accent" style="background:#2980b9;"></div>
-        </div>
-      </div>
-    </section>
+        const PASSWORD = "tokyo2026";
 
-    <!-- 渋谷 -->
-    <section class="district">
-      <div class="district-header">
-        <span class="district-number" style="color: #8e44ad;">03</span>
-        <div>
-          <h2 class="district-name">渋谷</h2>
-          <p class="district-name-en" style="color: #8e44adaa;">Shibuya</p>
-        </div>
-        <div class="district-line" style="background: #8e44ad33;"></div>
-      </div>
-      <div class="scroll-track">
-        <div class="spot-card">
-          <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=600&q=80" alt="忠犬ハチ公像" />
-          <div class="card-overlay"></div>
-          <span class="card-tag" style="color:#8e44ad;border-color:#8e44ad66;background:#8e44ad22;">観光</span>
-          <div class="card-content">
-            <p class="card-sub">Hachiko Statue</p>
-            <h3 class="card-name">忠犬ハチ公像</h3>
-            <p class="card-desc">渋谷のシンボル、忠犬ハチ公の待ち合わせ場所</p>
-          </div>
-          <div class="card-accent" style="background:#8e44ad;"></div>
-        </div>
-        <div class="spot-card">
-          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="渋谷 PARCO" />
-          <div class="card-overlay"></div>
-          <span class="card-tag" style="color:#8e44ad;border-color:#8e44ad66;background:#8e44ad22;">ショッピング</span>
-          <div class="card-content">
-            <p class="card-sub">Shibuya PARCO</p>
-            <h3 class="card-name">渋谷 PARCO</h3>
-            <p class="card-desc">アートとカルチャーが融合する複合施設</p>
-          </div>
-          <div class="card-accent" style="background:#8e44ad;"></div>
-        </div>
-      </div>
-    </section>
+        function checkPassword() {
 
-    <!-- 上野 -->
-    <section class="district">
-      <div class="district-header">
-        <span class="district-number" style="color: #27ae60;">04</span>
-        <div>
-          <h2 class="district-name">上野</h2>
-          <p class="district-name-en" style="color: #27ae60aa;">Ueno</p>
-        </div>
-        <div class="district-line" style="background: #27ae6033;"></div>
-      </div>
-      <div class="scroll-track">
-        <div class="spot-card">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80" alt="鳥焼肉鳥ひびきちゃん" />
-          <div class="card-overlay"></div>
-          <span class="card-tag" style="color:#27ae60;border-color:#27ae6066;background:#27ae6022;">焼肉</span>
-          <div class="card-content">
-            <p class="card-sub">Tori Hibiki-chan</p>
-            <h3 class="card-name">鳥焼肉鳥ひびきちゃん</h3>
-            <p class="card-desc">こだわりの鶏料理と焼肉が楽しめる人気店</p>
-          </div>
-          <div class="card-accent" style="background:#27ae60;"></div>
-        </div>
-      </div>
-    </section>
+            const input =
+                document.getElementById("password-input").value;
 
-</div>
-</div>
-    <div style="position: fixed; bottom: 20px; right: 20px; text-align: center; background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 999;">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://uyenzx.github.io/-2" alt="QR Code">
-</div>
-</div>
-<script>
+            if (input === PASSWORD) {
 
-const PASSWORD = "tokyo2026";
+                document.getElementById("password-screen")
+                    .style.display = "none";
 
-function checkPassword() {
+                document.getElementById("protected-content")
+                    .style.display = "";
 
-    const input =
-        document.getElementById("password-input").value;
+            } else {
 
-    if (input === PASSWORD) {
+                document.getElementById("error-text")
+                    .innerText = "Wrong password";
 
-        document.getElementById("password-screen")
-            .style.display = "none";
+            }
+        }
 
-        document.getElementById("protected-content")
-            .style.display = "block";
+        /* =====================
+           Block Inspect
+        ===================== */
 
-    } else {
+        document.addEventListener("contextmenu", (e) => {
+            e.preventDefault();
+        });
 
-        document.getElementById("error-text")
-            .innerText = "Wrong password";
+        document.addEventListener("keydown", (e) => {
 
-    }
-}
+            /* F12 */
+            if (e.key === "F12") {
+                e.preventDefault();
+            }
 
-/* =====================
-   Block Inspect
-===================== */
+            /* Ctrl+Shift+I */
+            if (e.ctrlKey && e.shiftKey && e.key === "I") {
+                e.preventDefault();
+            }
 
-document.addEventListener("contextmenu", (e) => {
-    e.preventDefault();
-});
+            /* Ctrl+Shift+J */
+            if (e.ctrlKey && e.shiftKey && e.key === "J") {
+                e.preventDefault();
+            }
 
-document.addEventListener("keydown", (e) => {
+            /* Ctrl+Shift+J */
+            if (e.ctrlKey && e.shiftKey && e.key === "C") {
+                e.preventDefault();
+            }
 
-    /* F12 */
-    if (e.key === "F12") {
-        e.preventDefault();
-    }
+            /* Ctrl+U */
+            if (e.ctrlKey && e.key === "u") {
+                e.preventDefault();
+            }
+        });
 
-    /* Ctrl+Shift+I */
-    if (e.ctrlKey && e.shiftKey && e.key === "I") {
-        e.preventDefault();
-    }
-
-    /* Ctrl+Shift+J */
-    if (e.ctrlKey && e.shiftKey && e.key === "J") {
-        e.preventDefault();
-    }
-
-    /* Ctrl+U */
-    if (e.ctrlKey && e.key === "u") {
-        e.preventDefault();
-    }
-});
-
-</script>
+    </script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
+
 </html>
